@@ -23,8 +23,8 @@
           y three-digit-numbers]
       (* x y) )))
 
-(println
+(time (println
   (->> three-digit-multiples
        (filter palindrome?)
        (apply max)
-  ))
+  )))
