@@ -8,6 +8,7 @@
 ;  By considering the terms in the Fibonacci sequence whose values do not exceed
 ;  four million, find the sum of the even-valued terms.
 ;;;;;;;;;;
+(ns solutions.two)
 
 (defn fib-seq [limit]
   (loop [prev 1 sum 1 nums (list)]

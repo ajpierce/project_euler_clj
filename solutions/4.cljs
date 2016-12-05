@@ -6,7 +6,7 @@
 ;  Find the largest palindrome made from the product of two 3-digit numbers.
 ;;;;;;;;;;
 
-(ns euler4.core
+(ns solutions.four
   (:require [clojure.string :refer [join]]) )
 
 ; Reverse either numbers or strings, but NOT sequences or iterables!

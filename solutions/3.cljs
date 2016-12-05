@@ -4,6 +4,7 @@
 ;
 ;  What is the largest prime factor of the number 600851475143 ?
 ;;;;;;;;;;
+(ns solutions.three)
 
 (defn factor? [number candidate]
   (zero? (mod number candidate)) )
