@@ -4,10 +4,8 @@
 ;
 ;  What is the largest prime factor of the number 600851475143 ?
 ;;;;;;;;;;
-(ns solutions.three)
-
-(defn factor? [number candidate]
-  (zero? (mod number candidate)) )
+(ns solutions.three
+  (:require [euler.common :refer [factor?]]) )
 
 (defn solution [number]
   (let [usb (long (Math/sqrt number))]  ; The upper search bounds is the square root of the number
@@ -20,5 +18,5 @@
         true (recur quotient (inc divisor)) ))))                        ; Otherwise, recurse with a higher divisor
 
 
-(let [number 600851475143]
-  (println "Largest prime candidate of" number "is:" (time (solution number))) )
+(time (let [number 600851475143]
+  (println "Largest prime candidate of" number "is:" (solution number)) ))
