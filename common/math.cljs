@@ -1,4 +1,4 @@
-(ns euler.common)
+(ns common.math)
 
 (defn pow
   "Raise `base` to the power of `exp`

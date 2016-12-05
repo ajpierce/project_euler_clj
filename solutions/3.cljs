@@ -5,7 +5,7 @@
 ;  What is the largest prime factor of the number 600851475143 ?
 ;;;;;;;;;;
 (ns solutions.three
-  (:require [euler.common :refer [factor?]]) )
+  (:require [common.math :refer [factor?]]) )
 
 (defn solution [number]
   (let [usb (long (Math/sqrt number))]  ; The upper search bounds is the square root of the number
