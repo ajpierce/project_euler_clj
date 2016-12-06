@@ -26,3 +26,19 @@
       (if (= 0 (rem quotient divisor))
         (recur (/ quotient divisor) divisor (conj factors divisor))
         (recur quotient (inc divisor) factors) ))))
+
+(defn sieve
+  "Sieve of Eratosthenes"
+  [[xs ps]]
+  (let [[p & more] xs]
+    [(remove #(zero? (rem % p)) xs) (cons p ps)]))
+
+(defn primes [n]
+  "Find all prime numberss less than or equal to n"
+  (if (< n 2)
+    []
+    (->> [(range 2 (inc n)) nil]
+         (iterate sieve)
+         (drop-while #(< (ffirst %) (Math/sqrt n)))
+         first
+         (apply concat))))
