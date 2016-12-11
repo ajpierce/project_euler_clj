@@ -13,12 +13,12 @@
   [number candidate]
   (zero? (mod number candidate)) )
 
-(defn prime-factors [number]
-  "For a given number, return a vector of the prime factors.
+(defn prime-factors [n]
+  "For a given number, return a vector of its prime factors
   eg: 18 -> [2 3 3]
   eg: 7 -> [7]
   eg: -4 -> []"
-  (loop [quotient number
+  (loop [quotient n
          divisor 2
          factors []]
     (if (< quotient 2)
@@ -26,6 +26,16 @@
       (if (= 0 (rem quotient divisor))
         (recur (/ quotient divisor) divisor (conj factors divisor))
         (recur quotient (inc divisor) factors) ))))
+
+(defn factors [n]
+  "For a given number, return a sorted set of ALL its factors
+  eg: 10 -> #{1 2 5 10}
+  eg: 28 -> #{1 2 4 7 14 28}"
+  (into (sorted-set)
+        (reduce concat
+                (for [x (range 1 (inc (Math/sqrt n)))
+                      :when (zero? (rem n x))]
+                  [x (/ n x)]))))
 
 (defn sieve
   "Sieve of Eratosthenes"
