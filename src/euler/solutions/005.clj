@@ -1,5 +1,4 @@
-#!/usr/bin/env planck
-(ns solutions.five
+(ns euler.solutions.005
   "Problem 5
     2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
     What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?"
@@ -14,5 +13,6 @@
        (map #(pow (first %) (last %)))
        (reduce *) ))
 
-(time (println "1-10:" (solution 1 10)))
-(time (println "1-20:" (solution 1 20)))
+(->> (solution 1 20)
+     (println "Solution 005:")
+     (time))
