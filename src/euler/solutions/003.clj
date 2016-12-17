@@ -1,11 +1,7 @@
-#!/usr/bin/env planck
-;;;;;;;;;;
-;  The prime factors of 13195 are 5, 7, 13 and 29.
-;
-;  What is the largest prime factor of the number 600851475143 ?
-;;;;;;;;;;
-(ns solutions.three
-  (:require [math.primes :refer [factor?]]) )
+(ns euler.solutions.003
+  "The prime factors of 13195 are 5, 7, 13 and 29.
+  What is the largest prime factor of the number 600851475143 ?"
+  (:require [euler.math.primes :refer [factor?]]) )
 
 (defn solution [number]
   (let [usb (long (Math/sqrt number))]  ; The upper search bounds is the square root of the number
@@ -18,5 +14,6 @@
         true (recur quotient (inc divisor)) ))))                        ; Otherwise, recurse with a higher divisor
 
 
-(time (let [number 600851475143]
-  (println "Largest prime candidate of" number "is:" (solution number)) ))
+(->> (solution 600851475143)
+     (println "Solution 003:")
+     (time))
