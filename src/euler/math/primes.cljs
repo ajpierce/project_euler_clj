@@ -1,4 +1,4 @@
-(ns math.primes)
+(ns euler.math.primes)
 
 (defn pow
   "Raise `base` to the power of `exp`
