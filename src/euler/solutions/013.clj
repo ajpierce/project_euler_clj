@@ -1,5 +1,4 @@
-#!/usr/bin/env planck
-(ns solutions.thirteen
+(ns euler.solutions.013
   "Work out the first ten digits of the sum of the following one-hundred 50-digit numbers"
   (:require [clojure.string :refer [join]]) )
 
@@ -113,7 +112,8 @@
       (recur (quot n 10) (cons (mod n 10) res)))))
 
 (->> sum
-     num-to-digits
+     (num-to-digits)
      (take 10)
-     join
-     println)
+     (join)
+     (println "Solution 013:")
+     (time))
