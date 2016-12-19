@@ -1,4 +1,4 @@
-(ns euler.solutions.18
+(ns euler.solutions.018
   "By starting at the top of the triangle below and moving to adjacent numbers on the row below... find the maximum total")
 
 (def triangle [[75]
@@ -25,5 +25,5 @@
        (fn [sums row]
          (map-indexed (fn [i v] (+ v (max-for sums i))) row) ))
      (apply max)
-     (println "Maximum total:")
+     (println "Solution 018:")
      (time))

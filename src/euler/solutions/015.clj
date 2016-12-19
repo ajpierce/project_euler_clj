@@ -1,4 +1,4 @@
-(ns euler.solutions.15
+(ns euler.solutions.015
   "Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
   How many such routes are there through a 20×20 grid?"
   (:require [clojure.math.combinatorics :as combo]))
@@ -12,4 +12,6 @@
   (->> (build-grid x y)
        (combo/count-permutations) ))
 
-(time (println (solution 20 20)))
+(->> (solution 20 20)
+     (println "Solution 015:")
+     (time))

@@ -1,4 +1,4 @@
-(ns euler.solutions.21
+(ns euler.solutions.021
   "Let d(n) be defined as the sum of proper divisors of n (numbers less than n which divide evenly into n).
   If d(a) = b and d(b) = a, where a ≠ b, then a and b are an amicable pair and each of a and b are called amicable numbers.
 
@@ -19,5 +19,5 @@
 (->> (range 1 10000)
      (filter amicable?)
      (reduce +)
-     (println)
+     (println "Solution 021:")
      (time))
