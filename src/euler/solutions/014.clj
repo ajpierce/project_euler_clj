@@ -1,5 +1,4 @@
-#!/usr/bin/env planck
-(ns solutions.fourteen
+(ns euler.solutions.014
   "The following iterative sequence is defined for the set of positive integers:
 
   n → n/2 (n is even)
@@ -20,10 +19,9 @@
           true nums   ; Some kind of error, like n = 0 or something
           )))
 
-(time
 (->> (range 99999 1000001)
      (map collatz)
      (map #(hash-map :i (first %) :len (count %)))
      (apply max-key :len)
-     (println))
-)
+     (println "Solution 014:")
+     (time))
