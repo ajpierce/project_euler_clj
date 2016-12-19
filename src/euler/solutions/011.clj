@@ -1,5 +1,4 @@
-#!/usr/bin/env planck
-(ns solutions.eleven
+(ns euler.solutions.011
   "What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?")
 
 (def grid
@@ -70,4 +69,6 @@
        (map #(reduce * %))
        (apply max)))
 
-(time (println (solution 4)))
+(->> (solution 4)
+     (println "Solution 011:")
+     (time))
