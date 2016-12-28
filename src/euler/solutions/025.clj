@@ -1,4 +1,4 @@
-(ns euler.solutions.024 "What is the index of the first term in the Fibonacci sequence to contain 1000 digits?")
+(ns euler.solutions.025 "What is the index of the first term in the Fibonacci sequence to contain 1000 digits?")
 
 (def fib (lazy-cat [(bigint 1) 1] (map + fib (rest fib))))
 
