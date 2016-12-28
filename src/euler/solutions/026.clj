@@ -1,14 +1,12 @@
 (ns euler.solutions.026 "Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.")
 
 (defn get-dec-rep [n]
-  (let [frac (str (with-precision 20000 (/ 1M n)))]
-    (if (> 20000 (count frac))
+  (let [frac (str (with-precision 3000 (/ 1M n)))]
+    (if (> 3000 (count frac))
       nil
       (->> frac
-        (#(subs % 2))
+        (#(subs % 2 (- (count %) 2)))
         (reverse)
-        (clojure.string/join)
-        (#(subs % 2))
         (clojure.string/join)
         (#(hash-map :n n :frac %)) ))))
 
