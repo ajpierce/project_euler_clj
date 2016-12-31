@@ -44,7 +44,7 @@
     [(remove #(zero? (rem % p)) xs) (cons p ps)]))
 
 (defn primes [n]
-  "Find all prime numberss less than or equal to n"
+  "Find all prime numbers less than or equal to n"
   (if (< n 2)
     []
     (->> [(range 2 (inc n)) nil]

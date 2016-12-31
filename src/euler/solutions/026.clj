@@ -26,5 +26,5 @@
      (remove nil?)
      (map rec-cy-len)
      (apply max-key :cycle-len)
-     (println)
+     (println "Solution 026:")
      (time))
