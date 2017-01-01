@@ -21,7 +21,7 @@
   (let [m (expt n 2)
         size (dec n)
         l (repeat 4 size)]
-    (set (map-indexed (fn [i v] (- m (* i v)) )l ))))
+    (set (map-indexed (fn [i v] (- m (* i v)) ) l)) ))
 
 (->> (range 1001 0 -2)
      (map four-corners)
