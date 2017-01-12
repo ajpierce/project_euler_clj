@@ -1,12 +1,17 @@
 # Project Euler Clojure Solutions
-The more Clojure I learn, the more wonderful it seems.
-In an effort to become more comfortable with Clojure, I've decided to (slowly;
-I'm a new father 😃) solve [Project Euler](https://projecteuler.net) problems in
-my "spare time."
+My solutions (in Clojure) to [Project Euler](https://projecteuler.net) problems
 
+## Running
+If you haven't already, install [Leiningen](https://leiningen.org/)
+
+Type `lein repl` to start the REPL in this project's directory.
+
+Then, to see the answer to (for example) problem 030, type (in the REPL):
+
+```
+(use 'euler.solutions.030 :reload)
+```
+
+## Feedback
 If you see something I could be doing better, send me a pull request! Being able
 to interact with a Clojure mentor would be fantastic.
-
-## Planck
-I am using Mike Fikes' excellent [Planck REPL](https://github.com/mfikes/planck)
-to run these CLJS scripts.
