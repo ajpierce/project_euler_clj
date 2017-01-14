@@ -11,3 +11,7 @@
 
 (defn proper-divisors [n]
   (disj (factors n) n) )
+
+(defn split-int [n]
+  "Splits an integer into a collection of ints representing the digits of n"
+  (->> n str seq (map #(Character/digit % 10))))
