@@ -15,3 +15,10 @@
 (defn split-int [n]
   "Splits an integer into a collection of ints representing the digits of n"
   (->> n str seq (map #(Character/digit % 10))))
+
+(defn reverse-alphanumeric
+  "Reverse either numbers or strings, but NOT sequences or iterables!"
+  [x] (join (reverse (str x))) )
+
+(defn palindrome? [candidate]
+  (= (str candidate) (reverse-alphanumeric candidate)))
